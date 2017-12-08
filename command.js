@@ -1,6 +1,5 @@
 var endpointUrl = 'https://graph.facebook.com/v2.11';
 
-
 var pages = [
     ['{page-name}', '{page-id}', '{access-token}'],
 ]
@@ -41,10 +40,8 @@ var csvString = 'thread_id,message_id,message,sender,is_me,created_time\n';
 var responseToCsv = function (id, response) {
 
     var jsonResponse = JSON.parse(response.response);
-    console.log(jsonResponse);
-
     var threadId = id;
-
+    
     var messages;
     if (jsonResponse.messages) {
         messages = jsonResponse.messages;
@@ -72,8 +69,6 @@ threadIds.forEach(function (threadId) {
     var threadUrl = endpointUrl + '/' + threadId + '/?fields=id,messages{message,from,created_time},senders&access_token=' + pageAccessToken;
     var syncThread = httpGetAsync(threadId, threadUrl, responseToCsv);
 });
-
-
 
 var filename = pageName + '-messages-' + new Date() + '.csv';
 var a = window.document.createElement('a');
