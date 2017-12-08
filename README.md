@@ -1,6 +1,4 @@
-# fb-fetch-messages-js
-
-# README #
+# fb-fetch-messages-js #
 
 - Use for fetch all message from facebook inbox page
 - Find accesstoken: https://developers.facebook.com/tools/explorer/
