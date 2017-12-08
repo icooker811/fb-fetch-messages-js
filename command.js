@@ -36,6 +36,10 @@ var saveThreadIds = function (id, response) {
 
 var syncThreadIds = httpGetAsync(pageId, conversationUrl, saveThreadIds);
 
+/*
+TO DO: Please wait until 'saveThreadIds' done
+*/
+
 var csvString = 'thread_id,message_id,message,sender,is_me,created_time\n';
 var responseToCsv = function (id, response) {
 
@@ -69,6 +73,10 @@ threadIds.forEach(function (threadId) {
     var threadUrl = endpointUrl + '/' + threadId + '/?fields=id,messages{message,from,created_time},senders&access_token=' + pageAccessToken;
     var syncThread = httpGetAsync(threadId, threadUrl, responseToCsv);
 });
+
+/*
+TO DO: Please wait until sync all 'threadIds' done
+*/
 
 var filename = pageName + '-messages-' + new Date() + '.csv';
 var a = window.document.createElement('a');
