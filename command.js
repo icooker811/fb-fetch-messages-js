@@ -75,6 +75,5 @@ var a = window.document.createElement('a');
 a.href = window.URL.createObjectURL(new Blob([csvString], {type: 'text/csv'}));
 a.download = filename;
 
-// Append anchor to body.
 document.body.appendChild(a);
 a.click();
